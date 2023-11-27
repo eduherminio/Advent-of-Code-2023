@@ -1,6 +1,6 @@
 ﻿namespace Advent2023.Library.Days;
 
-internal class Day01 : BaseDay
+public class Day01 : BaseDay
 {
     private readonly string fileInput;
 
