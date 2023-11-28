@@ -8,7 +8,7 @@ public partial class Home
     {
         Solutions.Clear();
 
-        var problems = typeof(Library.Days.LibraryDay01).Assembly.GetTypes()
+        var problems = typeof(Day01).Assembly.GetTypes()
                 .Where(type => typeof(BaseProblem).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
                 .OrderBy(t => t.FullName);
 

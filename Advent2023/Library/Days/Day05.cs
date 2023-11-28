@@ -1,10 +1,10 @@
 ﻿namespace Advent2023.Library.Days;
 
-public class LibraryDay05 : BaseLibraryDay
+public class Day05 : BaseLibraryDay
 {
     private readonly string fileInput;
 
-    public LibraryDay05() =>
+    public Day05() =>
         fileInput = File.ReadAllText(InputFilePath);
 
     public override ValueTask<string> Solve_1()
