@@ -4,8 +4,38 @@
     Home
 </PageTitle>
 
-<h1>
+<MudText Typo="@Typo.h2">
     Hello, world!
-</h1>
+</MudText>
 
-Welcome to your new app.
+<MudText Typo="@Typo.body1">
+    Welcome to your new app.
+</MudText>
+
+<MudButton Variant="@Variant.Filled"
+           Color="@Color.Primary"
+           OnClick="@GetSolutions">
+    Get Solutions
+</MudButton>
+
+@if (Solutions is { Count: > 0 })
+{
+    <MudStack Row="@false">
+        @foreach (var solution in Solutions)
+        {
+            <MudPaper>
+                <MudStack Row="@false">
+                    <MudText>
+                        Day @solution.Day
+                    </MudText>
+                    <MudText>
+                        Solution to Part One: @solution.Part1
+                    </MudText>
+                    <MudText>
+                        Solution to Part Two: @solution.Part2
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        }
+    </MudStack>
+}
