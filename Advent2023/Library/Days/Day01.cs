@@ -2,10 +2,8 @@
 
 public class Day01 : BaseLibraryDay
 {
-    private readonly string fileInput;
-
     public Day01() =>
-        fileInput = File.ReadAllText(InputFilePath);
+        File.ReadAllText(InputFilePath);
 
     public override ValueTask<string> Solve_1() =>
         new($"Solution to {ClassPrefix} {CalculateIndex()}, part 1");

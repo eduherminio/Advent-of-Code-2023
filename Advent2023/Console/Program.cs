@@ -1,4 +1,1 @@
-﻿await Solver.SolveAll(options =>
-{
-    options.ProblemAssemblies = [typeof(Day01).Assembly];
-});
+﻿await Solver.SolveAll(options => options.ProblemAssemblies = [typeof(BaseLibraryDay).Assembly]);

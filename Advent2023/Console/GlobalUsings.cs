@@ -1,2 +1,2 @@
-﻿global using Advent2023.Library.Days;
+﻿global using Advent2023.Library;
 global using AoCHelper;
