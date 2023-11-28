@@ -8,7 +8,7 @@ public partial class Home
     {
         Solutions.Clear();
 
-        var problems = typeof(Day01).Assembly.GetTypes()
+        var problems = typeof(BaseLibraryDay).Assembly.GetTypes()
                 .Where(type => typeof(BaseProblem).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
                 .OrderBy(t => t.FullName);
 
@@ -20,8 +20,11 @@ public partial class Home
                 continue;
             }
 
-            var dayString = problem.Name.Replace("Day", string.Empty);
-            int.TryParse(dayString, out var day);
+            if (!int.TryParse(problem.Name.Replace("Day", string.Empty), out var day))
+            {
+                Console.WriteLine("Unable to parse day");
+                day = 0;
+            }
 
             var solution1 = await instance.Solve_1();
             var solution2 = await instance.Solve_2();
