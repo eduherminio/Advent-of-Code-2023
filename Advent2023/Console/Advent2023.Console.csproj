@@ -8,16 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AoCHelper" Version="3.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="Inputs\01.txt">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-		<None Update="Inputs\05.txt">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
+		<ProjectReference Include="..\Library\Advent2023.Library.csproj" />
 	</ItemGroup>
 
 </Project>
