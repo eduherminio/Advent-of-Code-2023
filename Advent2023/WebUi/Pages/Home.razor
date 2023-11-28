@@ -1,20 +1,17 @@
 ﻿@page "/"
 
 <PageTitle>
-    Home
+    @PageTitle
 </PageTitle>
 
-<MudText Typo="@Typo.h2">
-    Hello, world!
-</MudText>
-
-<MudText Typo="@Typo.body1">
-    Welcome to your new app.
+<MudText Typo="@Typo.h4">
+    Number of problems: @NumberOfProblems
 </MudText>
 
 <MudButton Variant="@Variant.Filled"
            Color="@Color.Primary"
-           OnClick="@GetSolutions">
+           OnClick="@GetSolutions"
+           Disabled="@(NumberOfProblems == 0)">
     Get Solutions
 </MudButton>
 

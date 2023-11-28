@@ -2,14 +2,26 @@ namespace Advent2023.WebUi.Pages;
 
 public partial class Home
 {
+    private const string PageTitle = "Advent of Code 2023 - by Michael Bond";
+
     private List<Solution> Solutions { get; set; } = [];
+
+    private int NumberOfProblems { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NumberOfProblems = typeof(BaseLibraryDay).Assembly.GetTypes()
+                .Count(IsValidProblem);
+
+        base.OnInitialized();
+    }
 
     private async Task GetSolutions()
     {
         Solutions.Clear();
 
         var problems = typeof(BaseLibraryDay).Assembly.GetTypes()
-                .Where(type => typeof(BaseProblem).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
+                .Where(IsValidProblem)
                 .OrderBy(t => t.FullName);
 
 
@@ -37,4 +49,7 @@ public partial class Home
             });
         }
     }
+
+    private bool IsValidProblem(Type type) =>
+        typeof(BaseProblem).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract;
 }
