@@ -4,6 +4,12 @@
     @PageTitle
 </PageTitle>
 
+<MudSwitch T="@bool"
+           Label="Include today's problems"
+           Color="@Color.Primary"
+           @bind-Checked:get="@IncludeTodaysProblems"
+           @bind-Checked:set="@OnIncludeTodaysProblemsChanged" />
+
 <MudText Typo="@Typo.h4">
     Number of problems: @NumberOfProblems
 </MudText>
